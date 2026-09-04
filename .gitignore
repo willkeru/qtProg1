@@ -1,0 +1,17 @@
+build/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+compile_commands.json
+autogen/
+
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.exe
+
+Thumbs.db
+*.log
