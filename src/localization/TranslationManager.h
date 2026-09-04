@@ -1,16 +1,25 @@
 #pragma once
 
-#include <QApplication>
+#include <QObject>
 #include <QTranslator>
 
-class TranslationManager
-{
-public:
-    explicit TranslationManager(QApplication &application);
+#include "Language.h"
 
-    bool setLanguage(const QString &language);
+class TranslationManager : public QObject
+{
+    Q_OBJECT
+
+public:
+    explicit TranslationManager(QObject* parent = nullptr);
+
+    Language language() const noexcept;
+
+    bool setLanguage(Language language);
+
+Q_SIGNALS:
+    void languageChanged(Language language);
 
 private:
-    QApplication &m_application;
     QTranslator m_translator;
+    Language m_language{Language::English};
 };

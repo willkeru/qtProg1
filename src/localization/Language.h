@@ -2,6 +2,6 @@
 
 enum class Language
 {
-English,
-Russian
+    English,
+    Russian
 };
