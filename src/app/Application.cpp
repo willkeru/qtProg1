@@ -9,6 +9,7 @@ Application::Application(int& argc, char** argv)
     : m_application(argc, argv)
     , m_translationManager(&m_application)
 {
+    QCoreApplication::setOrganizationName("CurveOrg");
 }
 
 int Application::run()
